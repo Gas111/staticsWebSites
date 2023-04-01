@@ -24,9 +24,8 @@ const ThirSection = () => {
         <Card.Body>
           <Card.Title>Asiste al Evento Presencial</Card.Title>
           <button onClick={handleFormPresencial} className="button-styles">
-          Formulario Presencial
+            Formulario Presencial
           </button>
-          
         </Card.Body>
       </Card>
       <Card
@@ -38,15 +37,10 @@ const ThirSection = () => {
       >
         <Card.Body>
           <Card.Title>Asiste de forma virtual</Card.Title>
-         
 
           <button onClick={handleFormVirtual} className="button-styles">
             Formulario Virtual
           </button>
-
-
-
-         
         </Card.Body>
       </Card>
     </section>
