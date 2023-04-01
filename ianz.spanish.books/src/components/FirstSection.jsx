@@ -8,7 +8,7 @@ import 'add-to-calendar-button'
 const FirstSection = () => {
   return (
     <section className="firstsection w-full h-auto" id="first_section">
-      <Card style={{ width: '22rem', height: '33rem' }}>
+      <Card style={{ width: '22rem', height: '33rem',boxShadow:"1px 1px 5px 3px rgba(0,0,0,0.25)"}}>
         <Card.Img variant="top" src={imageCardOne} alt="foto del libro" />
         <Card.Body>
           <Card.Title>FILANTROINVERSION INMOBILIARIA</Card.Title>
@@ -22,7 +22,7 @@ const FirstSection = () => {
         </Card.Body>
       </Card>
 
-      <Card style={{ width: '22rem', height: '33rem' }}>
+      <Card style={{ width: '22rem', height: '33rem', boxShadow:"1px 1px 5px 3px rgba(0,0,0,0.25)" }}>
         <Card.Img variant="bot" src={imageCardTwo} alt="foto de los horarios" />
         <Card.Body>
           <Card.Title>Dias y Horarios</Card.Title>

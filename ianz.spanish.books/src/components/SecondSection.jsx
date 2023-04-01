@@ -8,7 +8,7 @@ import './styles/secondSection.css'
 const SecondSection = () => {
   return (
     <section className="secondSection w-full h-auto" id="second_section">
-      <Card style={{ width: '20rem', height: '25rem' }}>
+      <Card style={{ width: '20rem', height: '25rem',boxShadow:"0px 1px 5px 3px rgba(0,0,0,0.25)" }}>
         <a href="https://goo.gl/maps/GqfBC">
           <Card.Img variant="top" src={place} />
         </a>
@@ -21,7 +21,7 @@ const SecondSection = () => {
         </Card.Body>
       </Card>
 
-      <Card style={{ width: '20rem', height: '25rem' }}>
+      <Card style={{ width: '20rem', height: '25rem',boxShadow:"1px 1px 5px 3px rgba(0,0,0,0.25)" }}>
         {' '}
         <a href="http://" style={{ textDecoration: 'none', color: 'black' }}>
           <Card.Img
