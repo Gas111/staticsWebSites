@@ -17,8 +17,11 @@ const MainSection = () => {
       />
       <div className="title animate-pulse">
         <div className="title-box">
-          <h1 className="">Evento unico Internacional</h1>
+          <a href="#first_section">
+            <h1 className="">Evento unico Internacional</h1>{' '}
+          </a>
         </div>
+
         <div className="title-box-attention animate-pulse">
           <a href="#third_section">
             <p className="">Reserva tu lugar Gratis</p>
@@ -26,8 +29,6 @@ const MainSection = () => {
         </div>
         <img src={fingerImage} alt="Foto de dedo" className="finger" />
       </div>
-
-
     </header>
   )
 }

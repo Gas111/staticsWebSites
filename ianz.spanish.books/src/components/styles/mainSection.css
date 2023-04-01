@@ -31,6 +31,8 @@ top:1rem; */
 .title-box h1 {
     font-size: 1.5rem;
     font-family: "Great Vibes", Sans-serif;
+    text-decoration: none;
+    color: var(--text-color-blue);
 }
 
 
@@ -71,15 +73,15 @@ top:1rem; */
 
 @keyframes movetotop {
     from {
-        opacity:0;
+        opacity: 0;
         bottom: 0.5rem;
         scale: 1;
     }
 
     to {
         bottom: 3rem;
-        scale:0.8;
-        opacity:1;
+        scale: 0.8;
+        opacity: 1;
     }
 
 }

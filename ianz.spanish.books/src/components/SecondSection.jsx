@@ -23,7 +23,7 @@ const SecondSection = () => {
 
       <Card style={{ width: '20rem', height: '25rem',boxShadow:"1px 1px 5px 3px rgba(0,0,0,0.25)" }}>
         {' '}
-        <a href="http://" style={{ textDecoration: 'none', color: 'black' }}>
+        <a href="https://www.dunken.org/WEB2014/index.php?opt=2&id_titulo=19813" style={{ textDecoration: 'none', color: 'black' }}>
           <Card.Img
             variant="top"
             src={libro}
