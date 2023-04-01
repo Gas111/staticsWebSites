@@ -10,7 +10,7 @@ top:1rem; */
     top: 5rem;
     left: 0;
     border-radius: 50%;
-    margin-top:1rem;
+    margin-top: 1rem;
 
 }
 
@@ -48,4 +48,36 @@ top:1rem; */
     border-radius: 50%;
     box-shadow: -3px 0px 50px -14px rgba(0, 0, 0, 0.81) inset;
     font-weight: 700;
+}
+
+.title-box-attention a {
+    text-decoration: none;
+    color: black;
+
+
+}
+
+.finger {
+    /* background-color: red; */
+    background-size: cover;
+    width: 3rem;
+    height: auto;
+    position: relative;
+    bottom: 0.5rem;
+    left: 3rem;
+    z-index: 30;
+    animation: movetotop 2s infinite;
+}
+
+@keyframes movetotop {
+    from {
+        bottom: 0.5rem;
+        scale: 1;
+    }
+
+    to {
+        bottom: 3rem;
+        scale:0.8;
+    }
+
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import fotoivan from '../images/ivanmainsection.webp'
+import fingerImage from '../images/finger.png'
 // import '../App.css'
 import './styles/mainSection.css'
 
@@ -14,16 +15,19 @@ const MainSection = () => {
         alt="Foto de Ivan Anz en Conferencia"
         className="object-cover w-[100%] h-full z-0"
       />
-      <div className="title">
+      <div className="title animate-pulse">
         <div className="title-box">
           <h1 className="">Evento unico Internacional</h1>
         </div>
-        <div className="title-box-attention">
+        <div className="title-box-attention animate-pulse">
           <a href="#third_section">
             <p className="">Reserva tu lugar Gratis</p>
           </a>
         </div>
+        <img src={fingerImage} alt="Foto de dedo" className="finger" />
       </div>
+
+
     </header>
   )
 }

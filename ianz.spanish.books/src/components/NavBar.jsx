@@ -9,11 +9,6 @@ import { useEffect } from 'react'
 function NavBar() {
   const expand = 'sm'
 
-  useEffect(() => {
-  }, [])
-  
-
-
   return (
     <nav className="navbar">
       <Navbar
@@ -26,7 +21,7 @@ function NavBar() {
       >
         <Container fluid>
           <Navbar.Brand href="#main_section">
-            <img src={logoivan} alt="Firma Ivan" style={{height:"5rem"}}/>
+            <img src={logoivan} alt="Firma Ivan" style={{ height: '5rem' }} />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
           <Navbar.Offcanvas

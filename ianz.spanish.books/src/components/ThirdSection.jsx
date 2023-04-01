@@ -14,14 +14,14 @@ const ThirSection = () => {
 
   return (
     <section
-      className="thirdSection w-full h-auto flex bg-gray"
+      className="thirdSection w-full h-auto"
       id="third_section"
     >
       <Card style={{ width: '20rem', heigth: '15rem' }}>
         <Card.Body>
           <Card.Title>Asiste al Evento Presencial</Card.Title>
 
-          <Button onClick={handleFormPresencial} variant="primary">
+          <Button onClick={handleFormPresencial} variant="dark">
             Formulario Presencial
           </Button>
         </Card.Body>
@@ -31,7 +31,7 @@ const ThirSection = () => {
           <Card.Title>Asiste de forma virtual</Card.Title>
           <Card.Text></Card.Text>
 
-          <Button onClick={handleFormVirtual} variant="primary">
+          <Button onClick={handleFormVirtual} variant="dark">
             Formulario Virtual
           </Button>
         </Card.Body>
