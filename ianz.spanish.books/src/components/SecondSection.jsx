@@ -2,7 +2,7 @@ import React from 'react'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import place from '../images/ubicacionDunken.jpg'
-import editorial from '../images/logo-dunken.gif'
+import libro from '../images/libro.png'
 import './styles/secondSection.css'
 
 const SecondSection = () => {
@@ -20,15 +20,20 @@ const SecondSection = () => {
           </Card.Text>
         </Card.Body>
       </Card>
-      <Card style={{ width: '20rem', height: '25rem' }}>
-        <Card.Img variant="top" src={editorial} alt="foto editorial" />
 
-        <Card.Body>
-          <Card.Title>EDITORIAL DUNKEN</Card.Title>
-          <Card.Text>
-            Este evento sera realizado en la editorial Dunken{' '}
-          </Card.Text>
-        </Card.Body>
+      <Card style={{ width: '20rem', height: '25rem' }}>
+        {' '}
+        <a href="http://">
+          <Card.Img
+            variant="top"
+            src={libro}
+            alt="foto libro"
+            style={{ height: '23rem', margin: '0' }}
+          />
+          <Card.Body style={{ padding: '0', margin: '0' }}>
+            <Card.Title>Compre el Libro</Card.Title>
+          </Card.Body>{' '}
+        </a>
       </Card>
     </section>
   )

@@ -4,9 +4,16 @@ import Navbar from 'react-bootstrap/Navbar'
 import Offcanvas from 'react-bootstrap/Offcanvas'
 import './styles/navbar.css'
 import logoivan from '../images/ivanlogo.png'
+import { useEffect } from 'react'
 
 function NavBar() {
   const expand = 'sm'
+
+  useEffect(() => {
+  }, [])
+  
+
+
   return (
     <nav className="navbar">
       <Navbar

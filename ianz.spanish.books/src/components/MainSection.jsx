@@ -16,10 +16,12 @@ const MainSection = () => {
       />
       <div className="title">
         <div className="title-box">
-          <h1 className="">Evento unico en BsAs</h1>
+          <h1 className="">Evento unico Internacional</h1>
         </div>
         <div className="title-box-attention">
-          <p className="">Reserva tu lugar Gratis</p>
+          <a href="#third_section">
+            <p className="">Reserva tu lugar Gratis</p>
+          </a>
         </div>
       </div>
     </header>

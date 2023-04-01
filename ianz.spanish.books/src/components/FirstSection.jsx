@@ -8,30 +8,26 @@ import 'add-to-calendar-button'
 const FirstSection = () => {
   return (
     <section className="firstsection w-full h-auto" id="first_section">
-      <Card style={{ width: '20rem', height: '30rem' }}>
+      <Card style={{ width: '22rem', height: '33rem' }}>
         <Card.Img variant="top" src={imageCardOne} alt="foto del libro" />
         <Card.Body>
           <Card.Title>FILANTROINVERSION INMOBILIARIA</Card.Title>
           <Card.Text>
-            Charla explicativa de la mano de Ivan Anz sobre sus enunciados en el
-            libro y como se aplican de forma muy simple en la vida cotidiana.
-            Como debemos invertir nuestros pesos y dolares en base a su
-            experiencia.
+            Se realizara la primer presentacion Internacional en español del
+            libro. Sera muy grato compartir este lanzamiento con todos ustedes y
+            se espera con ansias que sean participes. Tendremos sorpresas y
+            novedades imperdibles de lanzamiento tanto en su asistencia
+            presencial como virtual.
           </Card.Text>
         </Card.Body>
       </Card>
 
-      <Card style={{ width: '20rem', height: '30rem' }}>
-        <Card.Img
-          variant="bot"
-          src={imageCardTwo}
-          alt="foto de los horarios"
-        />
+      <Card style={{ width: '22rem', height: '33rem' }}>
+        <Card.Img variant="bot" src={imageCardTwo} alt="foto de los horarios" />
         <Card.Body>
           <Card.Title>Dias y Horarios</Card.Title>
           <Card.Text>
-            La exposicion sera llevada a cabo en forma presencial y virtual
-            desde la EDITORIAL DUNKEN el dia 11 de ABRIL 2023 de 18 a 20hs hora
+            El evento sera llevado a cabo en forma presencial y virtual el dia 11 de ABRIL 2023 de 18 a 20hs hora
             Argentina, Bs As.
           </Card.Text>
           <add-to-calendar-button

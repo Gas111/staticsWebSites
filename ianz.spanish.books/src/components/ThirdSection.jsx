@@ -4,17 +4,26 @@ import Card from 'react-bootstrap/Card'
 import './styles/thirdSection.css'
 
 const ThirSection = () => {
+  const handleFormVirtual = () => {
+    window.open('https://forms.gle/PzpLMr6hWqDDHBu8A')
+  }
+
+  const handleFormPresencial = () => {
+    window.open('https://forms.gle/oNR7CqUdikApyBt66')
+  }
+
   return (
     <section
       className="thirdSection w-full h-auto flex bg-gray"
-      id="second_section"
+      id="third_section"
     >
       <Card style={{ width: '20rem', heigth: '15rem' }}>
         <Card.Body>
           <Card.Title>Asiste al Evento Presencial</Card.Title>
-          <a href="http://forms.gle/wAdD4Mk5ctFWvr3x5">
-            <Button variant="primary">Formulario Presencial</Button>
-          </a>
+
+          <Button onClick={handleFormPresencial} variant="primary">
+            Formulario Presencial
+          </Button>
         </Card.Body>
       </Card>
       <Card style={{ width: '20rem', heigth: '15rem' }}>
@@ -22,9 +31,9 @@ const ThirSection = () => {
           <Card.Title>Asiste de forma virtual</Card.Title>
           <Card.Text></Card.Text>
 
-          <a href="http://forms.gle/wAdD4Mk5ctFWvr3x5">
-            <Button variant="primary">Formulario Virtual</Button>
-          </a>
+          <Button onClick={handleFormVirtual} variant="primary">
+            Formulario Virtual
+          </Button>
         </Card.Body>
       </Card>
     </section>
