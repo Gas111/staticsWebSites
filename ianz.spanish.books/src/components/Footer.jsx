@@ -7,21 +7,21 @@ const Footer = () => {
       <div className="footer__box-menu">
         <ul>
           <li>
-            <a href="./about.html">Inicio</a>
+            <a href="#main_section">Inicio</a>
           </li>
           <li>
-            <a href="./index.html">Informacion</a>{' '}
+            <a href="#first_section">Informacion</a>{' '}
           </li>
           <li>
-            <a href="./products.html">Ubicacion</a>
+            <a href="#second_section">Ubicacion</a>
           </li>
           <li>
-            <a href="./contact.html">Inscribite</a>
+            <a href="#third_section.">Inscribite</a>
           </li>
         </ul>
       </div>
       <div className="footer__social-links">
-        <a href="https://www.facebook.com/profile.php?id=100081401764364">
+        <a href="https://www.facebook.com/ivananzpage">
           <i className="fa-brands fa-facebook"></i>
         </a>
 
@@ -29,12 +29,12 @@ const Footer = () => {
           {' '}
           <i className="fa-brands fa-whatsapp"></i>
         </a>
-        <a href="https://www.instagram.com/invites/contact/?i=q58x44e9ajk9&utm_content=k5tkmxl">
+        <a href="https://www.instagram.com/ivananzig/">
           <i className="fa-brands fa-instagram"></i>
         </a>
         <a href="http://">
           {' '}
-          <i className="fa-brands fa-twitter"></i>
+          <i className="fa fa-envelope"></i>
         </a>
       </div>
     </footer>

@@ -1,18 +1,17 @@
 import Container from 'react-bootstrap/Container'
-
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
-
 import Offcanvas from 'react-bootstrap/Offcanvas'
 import './styles/navbar.css'
+import logoivan from '../images/ivanlogo.png'
 
 function NavBar() {
   const expand = 'sm'
   return (
-    <div className="navbar">
+    <nav className="navbar">
       <Navbar
         key={expand}
-        bg="secondary"
+        bg="dark"
         expand={expand}
         className=""
         variant="dark"
@@ -20,7 +19,7 @@ function NavBar() {
       >
         <Container fluid>
           <Navbar.Brand href="#main_section">
-            Ivan Anz
+            <img src={logoivan} alt="Firma Ivan" style={{height:"5rem"}}/>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
           <Navbar.Offcanvas
@@ -45,7 +44,7 @@ function NavBar() {
           </Navbar.Offcanvas>
         </Container>
       </Navbar>
-    </div>
+    </nav>
   )
 }
 

@@ -6,16 +6,19 @@ import NavBar from './components/NavBar'
 import SecondSection from './components/SecondSection'
 import Footer from './components/Footer'
 import FirstSection from './components/FirstSection'
+import ThirdSection from './components/ThirdSection'
+import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="w-100vw">
+    <div className="app-screen w-100vw">
       <NavBar />
       <MainSection />
       <FirstSection />
       <SecondSection />
+      <ThirdSection />
       <Footer />
     </div>
   )

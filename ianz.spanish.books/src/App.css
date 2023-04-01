@@ -9,7 +9,15 @@
   --bg-color-white:white;
   --text-color-blue:#406d9b;
   --bg-color-gold: rgb(248, 204, 93);
+  --bg-color-slate-400:#94a3b8;
+  --bg-footer:#212529;
 }
+
+.app-screen{
+ 
+    background-color: var(--bg-color-slate-400);
+ }
+
 
 /* 
 .logo {
