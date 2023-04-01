@@ -71,6 +71,7 @@ top:1rem; */
 
 @keyframes movetotop {
     from {
+        opacity:0;
         bottom: 0.5rem;
         scale: 1;
     }
@@ -78,6 +79,7 @@ top:1rem; */
     to {
         bottom: 3rem;
         scale:0.8;
+        opacity:1;
     }
 
 }
