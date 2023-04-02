@@ -47,7 +47,7 @@ function NavBar() {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1 pe-3" variant="dark">
-                <Nav.Link href="#main_section" className="link-menu">Inicio</Nav.Link>
+                <Nav.Link href="#main_section" className="link-menu" >Inicio</Nav.Link>
                 <Nav.Link href="#first_section" className="link-menu">Informacion</Nav.Link>
                 <Nav.Link href="#second_section" className="link-menu">Ubicacion</Nav.Link>
                 <Nav.Link href="#third_section" className="link-menu">Inscribite</Nav.Link>
