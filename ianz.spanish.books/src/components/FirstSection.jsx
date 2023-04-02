@@ -13,10 +13,10 @@ const FirstSection = () => {
         <Card.Body>
           <Card.Title>FILANTROINVERSION INMOBILIARIA</Card.Title>
           <Card.Text>
-            Se realizara la primer presentacion Internacional en español del
+            Se realizará la primer presentación Internacional en español del
             libro. Sera muy grato compartir este lanzamiento con todos ustedes y
-            se espera con ansias que sean participes. Tendremos sorpresas y
-            novedades imperdibles de lanzamiento tanto en su asistencia
+            se espera con ansias que sean participes. Tendremos <span className='text-bold'>sorpresas y
+            novedades imperdibles</span>  de lanzamiento tanto en su asistencia
             presencial como virtual.
           </Card.Text>
         </Card.Body>
@@ -25,9 +25,9 @@ const FirstSection = () => {
       <Card style={{ width: '22rem', height: '33rem', boxShadow:"1px 1px 5px 3px rgba(0,0,0,0.25)" }}>
         <Card.Img variant="bot" src={imageCardTwo} alt="foto de los horarios" />
         <Card.Body>
-          <Card.Title>Dias y Horarios</Card.Title>
+          <Card.Title>Días y Horarios</Card.Title>
           <Card.Text>
-            El evento sera llevado a cabo en forma presencial y virtual el dia 11 de ABRIL 2023 de 18 a 20hs hora
+            El evento será llevado a cabo en forma <span className='text-bold'>presencial y virtual</span> el día 11 de ABRIL 2023 de 18 a 20hs hora
             Argentina, Bs As.
           </Card.Text>
           <add-to-calendar-button
