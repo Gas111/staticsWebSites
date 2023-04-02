@@ -8,22 +8,46 @@ import { useEffect, useState } from 'react'
 
 function NavBar() {
   const expand = 'sm'
-  const [expanded, setExpanded] = useState(false)
+  const [expanded, setExpanded] = useState("expanded")
+  const [toggled, setToggled] = useState(false)
 
- 
+  const handlerClick = (e) => {
+    // console.log(e.target.text)
+    // console.log(e.target)
+    // console.log(e.target.attr)
+    // console.log("se clickeo")
+    // if (e.target.text == 'Inicio') {
+    //   if (toggled) setExpanded(false)
+    // }
+  }
+
+  const handleToggle = () => {
+    // setToggled(!toggled)
+    // if (toggled) {
+    // }
+    // console.log('se abrio o cerro')
+  }
+
+  const handleCollapse = (e) => {
+    console.log(e.target.text)
+    console.log(e.target)
+    console.log(e.target.attr)
+    console.log('solo despues')
+  }
+
   return (
     <nav className="navbar">
       <Navbar
         key={expand}
         bg="dark"
-        expanded={expanded}
+        // expanded={expanded}
         expand={expand}
         className=""
         variant="dark"
         sticky="top"
-        // onSelect={handleBar}
-        onClick={() => {setExpanded(expanded ? false : 'expanded') 
-      }}
+        // onToggle={handleToggle}
+        collapseOnSelect={handleCollapse}
+        // onClick={handlerClick}
       >
         <Container fluid>
           <Navbar.Brand href="#main_section">
@@ -31,14 +55,13 @@ function NavBar() {
           </Navbar.Brand>
           <Navbar.Toggle
             aria-controls={`offcanvasNavbar-expand-${expand}`}
-            // onClick={() => {setExpanded(expanded ? false : 'expanded')
-         
-          
+            expanded={expanded}
           />
           <Navbar.Offcanvas
             id={`offcanvasNavbar-expand-${expand}`}
             aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
             placement="end"
+            // onClick={handlerClick}
           >
             <Offcanvas.Header closeButton>
               <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
@@ -46,12 +69,22 @@ function NavBar() {
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
-              <Nav className="justify-content-end flex-grow-1 pe-3" variant="dark">
-                <Nav.Link href="#main_section" className="link-menu" >Inicio</Nav.Link>
-                <Nav.Link href="#first_section" className="link-menu">Informacion</Nav.Link>
-                <Nav.Link href="#second_section" className="link-menu">Ubicacion</Nav.Link>
-                <Nav.Link href="#third_section" className="link-menu">Inscribite</Nav.Link>
-                <Nav.Link href="#footer_section" className="link-menu">Social</Nav.Link>
+              <Nav className="justify-content-end flex-grow-1 pe-3">
+                <Nav.Link href="#main_section" className="link-menu">
+                  Inicio
+                </Nav.Link>
+                <Nav.Link href="#first_section" className="link-menu">
+                  Informacion
+                </Nav.Link>
+                <Nav.Link href="#second_section" className="link-menu">
+                  Ubicacion
+                </Nav.Link>
+                <Nav.Link href="#third_section" className="link-menu">
+                  Inscribite
+                </Nav.Link>
+                <Nav.Link href="#footer_section" className="link-menu">
+                  Social
+                </Nav.Link>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>

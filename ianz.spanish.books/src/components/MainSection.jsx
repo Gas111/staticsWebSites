@@ -18,7 +18,7 @@ const MainSection = () => {
       <div className="title animate-pulse">
         <div className="title-box">
           <a href="#first_section">
-            <h1 className="">Evento unico Internacional</h1>{' '}
+            <h1 className="">Evento único Internacional</h1>{' '}
           </a>
         </div>
 
