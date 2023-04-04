@@ -21,7 +21,7 @@ const Footer = () => {
         </ul>
       </div>
       <div className="footer__social-links">
-        <a href="https://www.facebook.com/ivananzpage">
+        <a href="https://www.facebook.com/FilantroInversion">
           <i className="fa-brands fa-facebook"></i>
         </a>
 
@@ -29,7 +29,7 @@ const Footer = () => {
           {' '}
           <i className="fa-brands fa-whatsapp"></i>
         </a> */}
-        <a href="https://www.instagram.com/ivananzig/">
+        <a href="https://www.instagram.com/philanthroinvestorslatam/">
           <i className="fa-brands fa-instagram"></i>
         </a>
         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ianz.spanish.book@gmail.com">

@@ -6,7 +6,7 @@ import './styles/navbar.css'
 import logoivan from '../images/ivanlogo.png'
 import { useEffect, useState } from 'react'
 
-function NavBar() {
+function NavBarotro() {
   const expand = 'sm'
   const [expanded, setExpanded] = useState("false")
   const [toggled, setToggled] = useState(false)
@@ -50,7 +50,8 @@ useEffect(() => {
       >
         <Container fluid>
           <Navbar.Brand href="#main_section">
-            <img src={logoivan} alt="Firma Ivan" style={{ height: '5rem' }} />
+            <a href="https://ivananz.com"> <img src={logoivan} alt="Firma Ivan" style={{ height: '5rem' }} /></a>
+           
           </Navbar.Brand>
           <Navbar.Toggle
             aria-controls={`offcanvasNavbar-expand-${expand}`}
@@ -94,4 +95,4 @@ useEffect(() => {
   )
 }
 
-export default NavBar
+export default NavBarotro
