@@ -63,7 +63,7 @@ function NavBar() {
                   Ubicacion
                 </Nav.Link>
                 <Nav.Link href="#third_section" className="link-menu">
-                  Inscribite
+                  Registro
                 </Nav.Link>
                 <Nav.Link href="#footer_section" className="link-menu">
                   Social

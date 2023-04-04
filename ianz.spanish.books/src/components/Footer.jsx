@@ -16,7 +16,7 @@ const Footer = () => {
             <a href="#second_section">Ubicación</a>
           </li>
           <li>
-            <a href="#third_section.">Inscribite</a>
+            <a href="#third_section.">Registro</a>
           </li>
         </ul>
       </div>
