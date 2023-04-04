@@ -26,7 +26,7 @@ const Footer = () => {
         </a>
 
         <a href="https://ivananz.com">
-          <i className="fa-thin fa-globe"></i>
+          <i className="fa-solid fa-earth-americas"></i>
           {/* <i className="fa-brands fa-whatsapp"></i> */}
         </a>
         <a href="https://www.instagram.com/philanthroinvestorslatam/">
