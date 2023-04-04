@@ -25,10 +25,10 @@ const Footer = () => {
           <i className="fa-brands fa-facebook"></i>
         </a>
 
-        {/* <a href="https://walink.co/b52e51">
-          {' '}
-          <i className="fa-brands fa-whatsapp"></i>
-        </a> */}
+        <a href="https://ivananz.com">
+          <i className="fa-thin fa-globe"></i>
+          {/* <i className="fa-brands fa-whatsapp"></i> */}
+        </a>
         <a href="https://www.instagram.com/philanthroinvestorslatam/">
           <i className="fa-brands fa-instagram"></i>
         </a>
