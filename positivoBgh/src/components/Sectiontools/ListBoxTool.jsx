@@ -14,7 +14,7 @@ export default function ListBoxTool() {
   return (
     <section className="w-[60%] flex flex-col m-[1rem]">
       <Listbox value={selectedPerson} onChange={setSelectedPerson}>
-        <Listbox.Button className="inline-flex text-purple w-[60%] justify-between rounded-lg bg-white text-black px-4 py-2 text-sm font-medium hover:brightness-125 focus:outline-white focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 shadow-lg shadow-purple-900/50 items-center">
+        <Listbox.Button className="inline-flex text-purple w-[60%] justify-between rounded-lg bg-slate-200 text-black px-4 py-2 text-sm font-medium hover:bg-white focus:outline-white focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 shadow-lg shadow-purple-900/50 items-center">
           {selectedPerson.name} <VscChevronDown className="" />
         </Listbox.Button>
         <Transition
