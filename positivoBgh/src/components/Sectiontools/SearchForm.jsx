@@ -11,20 +11,20 @@ const SearchForm = () => {
 
   useEffect(() => {
     const requestOptions = {
-      method: 'get',
-      headers: myHeaders,
-      redirect: 'follow',
+      // method: 'get',
+      // headers: myHeaders,
+      // redirect: 'follow',
     }
 
     const URL =
-      'https://v1.nocodeapi.com/gas111333/google_sheets/iLwNKyEPgqiYWuvz?tabId=CasaCentral&row_id=1'
+      'https://script.google.com/macros/s/AKfycbxHvbdpu77KjlusOKBI5lDoYHZzE7R3MgQz8yBDp9vSZQIcB-DSKtegEr6-LaCL6niE/exec'
 
     setLoading(true)
 
     axios
       .get(URL, requestOptions)
       .then((result) => {
-        setColumns(Object.values(result.data))
+        setColumns(Object.values(result.data.data[0]))
         setLoading(false)
       })
       .catch((err) => {
