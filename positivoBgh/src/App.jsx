@@ -11,11 +11,16 @@ function App() {
 
   return (
     <div className="App">
-      <LoginScreen />
 
-      {/* <NavBar />
-      <MainSection />
-      <Footer /> */}
+     <Routes>
+     <Route path="/" element={<LoginScreen/>}></Route>
+
+     <Route element={<ProtectedRoutes />}>
+          <Route path="/search" element={<MainScreen />}></Route>
+          <Route path="/changes" element={<FirstScreen />}></Route>
+        </Route>
+
+ </Routes>
     </div>
   )
 }

@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useGoogleLogout } from 'react-google-login'
+import GoogleLogoutButton from './GoogleButtons/GoogleLogoutButton'
+import { googleLogout } from '@react-oauth/google'
+import { gapi } from 'gapi-script'
 
 const navigation = [
   { name: 'Busqueda', href: '#', current: true },
@@ -14,7 +18,26 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function NavBar() {
+export default function NavBar({ userInfo ,setUserInfo}) {
+  useEffect(() => {
+    console.log(userInfo?.imageUrl, 'userInfo')
+  }, [userInfo])
+
+  const handlerSignOut = () => {
+    const auth2 = gapi.auth2.getAuthInstance()
+    if (auth2 != null) {
+      auth2
+        .signOut()
+        .then(auth2.disconnect().then(console.log('logout succesfull')
+       ))
+       
+       setUserInfo("")
+      }
+
+  }
+
+  // console.log(loginOut)
+
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -80,9 +103,13 @@ export default function NavBar() {
                     <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                       <span className="sr-only">Open user menu</span>
                       <img
-                        className="h-8 w-8 rounded-full"
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        className={
+                          userInfo?.imageUrl
+                            ? 'h-8 w-8 rounded-full'
+                            : 'h-8 w-8 rounded-full display-none invisible'
+                        }
+                        src={userInfo?.imageUrl}
+                        alt="Image User"
                       />
                     </Menu.Button>
                   </div>
@@ -105,7 +132,7 @@ export default function NavBar() {
                               'block px-4 py-2 text-sm text-gray-700',
                             )}
                           >
-                            Your Profile
+                            {userInfo ? userInfo.name : 'Your Profile'}
                           </a>
                         )}
                       </Menu.Item>
@@ -117,19 +144,7 @@ export default function NavBar() {
                               active ? 'bg-gray-100' : '',
                               'block px-4 py-2 text-sm text-gray-700',
                             )}
-                          >
-                            Settings
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(
-                              active ? 'bg-gray-100' : '',
-                              'block px-4 py-2 text-sm text-gray-700',
-                            )}
+                            onClick={handlerSignOut}
                           >
                             Sign out
                           </a>

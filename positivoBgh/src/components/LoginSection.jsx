@@ -1,19 +1,23 @@
-import React from 'react'
-import  GoogleLogin  from 'react-google-login'
-import ReactDOM from 'react-dom'
+import React, { useEffect } from 'react'
+import { GoogleLogin } from 'react-google-login'
+import { gapi } from 'gapi-script'
+import GoogleLoginButton from './GoogleButtons/GoogleLoginButton'
+import GoogleLogoutButton from './GoogleButtons/GoogleLogoutButton'
 
-ReactDOM.render(
-  <GoogleLogin
-    clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
-    buttonText="Login"
-    onSuccess={responseGoogle}
-    onFailure={responseGoogle}
-    cookiePolicy={'single_host_origin'}
-  />,
-  document.getElementById('googleButton'),
-)
+var clientId =
+  '1064848985718-s6283cvk4akh63kujfqueau630l97bkd.apps.googleusercontent.com'
 
-const LoginSection = () => {
+const LoginSection = ({ setUserInfo }) => {
+  useEffect(() => {
+    function start() {
+      gapi.client.init({ client_id: clientId, scope: '' })
+    }
+
+    gapi.load('client:auth2', start)
+  }, [])
+
+  //   const accessToken = gapi.auth?.getToken().access_token
+
   return (
     <div className="text-left flex justify-center ai-center pl-[1rem]  pr-[1rem] pt-[1rem] bg-gradient-to-r from-slate-100 to-purple-400 w-full h-screen">
       <div class="w-full max-w-xs">
@@ -61,14 +65,8 @@ const LoginSection = () => {
               Forgot Password?
             </a>
           </div>
-          {/* <GoogleLogin
-            clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
-            buttonText="Login"
-            onSuccess={responseGoogle}
-            onFailure={responseGoogle}
-            cookiePolicy={'single_host_origin'}
-          />
-          , */}
+          <div className="m-[0.5rem] border-b-2 "></div>
+          <GoogleLoginButton setUserInfo={setUserInfo} />
         </form>
       </div>
     </div>
