@@ -6,34 +6,44 @@ import { useGoogleLogout } from 'react-google-login'
 import GoogleLogoutButton from './GoogleButtons/GoogleLogoutButton'
 import { googleLogout } from '@react-oauth/google'
 import { gapi } from 'gapi-script'
+import { useNavigate } from 'react-router'
 
 const navigation = [
-  { name: 'Busqueda', href: '#', current: true },
-  { name: 'Ingreso', href: '#', current: false },
-  { name: 'Cambios', href: '#', current: false },
-  { name: 'Link Sheet', href: '#', current: false },
+  { name: 'Login', href: '/', current: false },
+  { name: 'Busqueda', href: '/search', current: false },
+  { name: 'Ingreso', href: '/ingreso', current: false },
+  { name: 'Cambios', href: '/cambio', current: false },
+  { name: 'Link Sheet', href: '/linksheet', current: false },
 ]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function NavBar({ userInfo ,setUserInfo}) {
+export default function NavBar({ userInfo, setUserInfo }) {
+  const navigate = useNavigate()
+
   useEffect(() => {
-    console.log(userInfo?.imageUrl, 'userInfo')
+    console.log(userInfo.imageUrl, 'userInfo')
   }, [userInfo])
 
-  const handlerSignOut = () => {
+  const handlerSignOut = async () => {
     const auth2 = gapi.auth2.getAuthInstance()
+    console.log(auth2)
     if (auth2 != null) {
       auth2
         .signOut()
-        .then(auth2.disconnect().then(console.log('logout succesfull')
-       ))
-       
-       setUserInfo("")
-      }
+        .then(auth2.disconnect().then(console.log('logout succesfull')))
 
+      setUserInfo('')
+    }
+
+    setUserInfo('')
+    gapi.auth.setToken(null)
+    await gapi.auth.signOut()
+    localStorage.clear()
+    sessionStorage.clear()
+    navigate('/')
   }
 
   // console.log(loginOut)
