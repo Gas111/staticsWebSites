@@ -7,7 +7,8 @@ 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
 
 
 install gapi-script
-install react-google-login
+install @react-google
+install nextui.org - Goods UI for webpages
 
 
 1064848985718-up29u3ugkgo3fki4nso39m3h1r6th9qv.apps.googleusercontent.com

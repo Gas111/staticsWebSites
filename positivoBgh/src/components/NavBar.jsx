@@ -2,16 +2,14 @@ import React, { useEffect } from 'react'
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import { useGoogleLogout } from 'react-google-login'
 import GoogleLogoutButton from './GoogleButtons/GoogleLogoutButton'
 import { googleLogout } from '@react-oauth/google'
-import { gapi } from 'gapi-script'
 import { useNavigate } from 'react-router'
+import { useSelector } from 'react-redux'
 
 const navigation = [
-  { name: 'Login', href: '/', current: false },
   { name: 'Busqueda', href: '/search', current: false },
-  { name: 'Ingreso', href: '/ingreso', current: false },
+  { name: 'Nuevo Ingreso', href: '/ingreso', current: false },
   { name: 'Cambios', href: '/cambio', current: false },
   { name: 'Link Sheet', href: '/linksheet', current: false },
 ]
@@ -20,33 +18,18 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function NavBar({ userInfo, setUserInfo }) {
+export default function NavBar() {
   const navigate = useNavigate()
+  const userInfo = useSelector((state) => state.login)
 
-  useEffect(() => {
-    console.log(userInfo.imageUrl, 'userInfo')
-  }, [userInfo])
+  useEffect(() => {}, [])
 
   const handlerSignOut = async () => {
-    const auth2 = gapi.auth2.getAuthInstance()
-    console.log(auth2)
-    if (auth2 != null) {
-      auth2
-        .signOut()
-        .then(auth2.disconnect().then(console.log('logout succesfull')))
-
-      setUserInfo('')
-    }
-
-    setUserInfo('')
-    gapi.auth.setToken(null)
-    await gapi.auth.signOut()
-    localStorage.clear()
-    sessionStorage.clear()
+    googleLogout()
+    localStorage.removeItem('accessToken')
+    localStorage.removeItem('loginWith')
     navigate('/')
   }
-
-  // console.log(loginOut)
 
   return (
     <Disclosure as="nav" className="bg-gray-800">
@@ -59,7 +42,8 @@ export default function NavBar({ userInfo, setUserInfo }) {
                 <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
-                    <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                    // <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                    ''
                   ) : (
                     <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
                   )}
@@ -67,16 +51,16 @@ export default function NavBar({ userInfo, setUserInfo }) {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <img
+                  {/* <img
                     className="block h-8 w-auto lg:hidden"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                    src=""
                     alt="Your Company"
                   />
                   <img
                     className="hidden h-8 w-auto lg:block"
                     src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
                     alt="Your Company"
-                  />
+                  /> */}
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
@@ -114,11 +98,11 @@ export default function NavBar({ userInfo, setUserInfo }) {
                       <span className="sr-only">Open user menu</span>
                       <img
                         className={
-                          userInfo?.imageUrl
+                          userInfo?.picture
                             ? 'h-8 w-8 rounded-full'
                             : 'h-8 w-8 rounded-full display-none invisible'
                         }
-                        src={userInfo?.imageUrl}
+                        src={userInfo?.picture}
                         alt="Image User"
                       />
                     </Menu.Button>

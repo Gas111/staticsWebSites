@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ListBoxTool from './Sectiontools/ListBoxTool'
 import SearchForm from './Sectiontools/SearchForm'
+import { useDispatch, useSelector } from 'react-redux'
 
 const place = [
   { id: 1, name: 'Casa Central', unavailable: false },
@@ -16,11 +17,18 @@ const category = [
 ]
 
 const MainSection = () => {
+  // const data = useSelector((state) => state.data)
+  // const dispatch = useDispatch()
+  useEffect(() => {
+    // dispatch(getData())
+  }, [])
+
   return (
     <div className="text-left pl-[1rem] pt-[1rem] bg-gradient-to-r from-purple-400 to-purple-800 w-full h-auto">
       <h1 className="font-bold">Busqueda</h1>
       <div>
         <ListBoxTool param={place} />
+        <ListBoxTool param={category} />
         <ListBoxTool param={category} />
         <SearchForm />
       </div>

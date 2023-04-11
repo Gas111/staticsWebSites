@@ -1,10 +1,10 @@
-import { FaceSmileIcon } from '@heroicons/react/24/outline'
+
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import InputFormSearch from './InputFormSearch'
 import { useForm } from 'react-hook-form'
 
-const SearchForm = () => {
+const InserForm = () => {
   const [columns, setColumns] = useState([])
   const [allData, setAllData] = useState([])
   const [loading, setLoading] = useState(false)
@@ -83,4 +83,4 @@ const SearchForm = () => {
   )
 }
 
-export default SearchForm
+export default InserForm

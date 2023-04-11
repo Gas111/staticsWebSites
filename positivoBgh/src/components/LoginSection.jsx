@@ -1,25 +1,32 @@
 import React, { useEffect } from 'react'
-import { GoogleLogin } from 'react-google-login'
-import { gapi } from 'gapi-script'
-import GoogleLoginButton from './GoogleButtons/GoogleLoginButton'
-import GoogleLogoutButton from './GoogleButtons/GoogleLogoutButton'
-// import { GoogleOAuthProvider } from '@react-oauth/google'
+import { useGoogleLogin } from '@react-oauth/google'
+import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
-var clientId =
-  '1064848985718-up29u3ugkgo3fki4nso39m3h1r6th9qv.apps.googleusercontent.com'
+const LoginSection = () => {
+  const navigate = useNavigate()
+  const userInfo = useSelector((state) => state.login)
 
-const LoginSection = ({ setUserInfo }) => {
-  useEffect(() => {
-    function start() {
-      const client = gapi.client.init({ client_id: clientId, scope: '' })
+  useEffect(() => {}, [])
 
-      console.log(client)
-    }
-    const user = gapi.load('client:auth2', start)
-    console.log(user)
-  }, [])
-
-  //   const accessToken = gapi.auth?.getToken().access_token
+  const loginToGoogle = () => {
+    // if (userInfo) {
+    //   // navigate('/search')
+    //   console.log('toy aca')
+    // } else {
+    //   console.log('toy aca else')
+    useGoogleLogin({
+      onSuccess: (tokenResponse) => {
+        localStorage.setItem('loginWith', 'Google')
+        localStorage.setItem('accessToken', tokenResponse.access_token)
+        console.log('login Ok')
+      },
+      onError: () => {
+        console.log('login failed')
+      },
+    })
+    // }
+  }
 
   return (
     <div className="text-left flex justify-center ai-center pl-[1rem]  pr-[1rem] pt-[1rem] bg-gradient-to-r from-slate-100 to-purple-400 w-full h-screen">
@@ -70,8 +77,9 @@ const LoginSection = ({ setUserInfo }) => {
               Forgot Password?
             </a>
           </div>
-          <div className="m-[0.5rem] border-b-2 "></div>
-          <GoogleLoginButton setUserInfo={setUserInfo} />
+          <div className="m-[0.5rem] border-b-2 ">
+            <button onClick={() => loginToGoogle()}>CLICK ACA</button>
+          </div>
         </form>
       </div>
     </div>
