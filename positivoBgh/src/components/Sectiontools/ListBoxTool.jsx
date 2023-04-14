@@ -1,15 +1,18 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { VscChevronDown } from 'react-icons/vsc'
 
-export default function ListBoxTool({ param }) {
-  const [selectedParam, setSelectedParam] = useState(param[0])
-
+export default function ListBoxTool({
+  param,
+  selectedAtribute,
+  setSelectedAtribute,
+}) {
+  
   return (
     <section className="w-[60%] flex flex-col m-[1rem]">
-      <Listbox value={selectedParam} onChange={setSelectedParam}>
+      <Listbox value={selectedAtribute} onChange={setSelectedAtribute}>
         <Listbox.Button className="inline-flex text-purple w-[60%] justify-between rounded-lg bg-slate-200 text-black px-4 py-2 text-sm font-medium hover:bg-white focus:outline-white focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 shadow-lg shadow-purple-900/50 items-center">
-          {selectedParam.name} <VscChevronDown className="" />
+          {selectedAtribute?.name} <VscChevronDown className="" />
         </Listbox.Button>
         <Transition
           enter="transition duration-100 ease-out"
@@ -26,8 +29,8 @@ export default function ListBoxTool({ param }) {
                 value={param}
                 disabled={param.unavailable}
                 className={`${
-                  param.unavailable ? 'cursor-none' : 'cursor-pointer'
-                } p-[0.3rem] hover:bg-purple-100`}
+                  param.unavailable ? '' : 'hover:bg-purple-100'
+                } p-[0.3rem] cursor-pointer`}
               >
                 <div>{param.name}</div>
               </Listbox.Option>

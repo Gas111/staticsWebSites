@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
+import { setColumns } from './columns.slice'
 // require('dotenv').config()
-
 
 export const dataSlice = createSlice({
   name: 'data',
@@ -19,21 +19,23 @@ export const { findGroupByColumn } = dataSlice.actions
 export default dataSlice.reducer
 
 export const getData = () => (dispatch) => {
-  const URLBASE = 'https://script.google.com/macros/s/AKfycbyM7HgadbGylSU4e6yH8DqOThfXFpFFL1jlbdd3y0rvIQwZvz5UkyelO6aX5G1WHCil/exec'
+  const URLBASE =
+    'https://script.google.com/macros/s/AKfycbyM7HgadbGylSU4e6yH8DqOThfXFpFFL1jlbdd3y0rvIQwZvz5UkyelO6aX5G1WHCil/exec'
 
   return axios
     .get(URLBASE)
-    .then((res) => dispatch(setDataGlobal(Object.values(result.data.data))))
+    .then((result) => {
+      dispatch(setDataGlobal(Object.values(result.data.data)))
+      dispatch(setColumns(Object.values(result.data.data[0])))
+    })
     .catch((err) => console.log(err))
 }
-
-
 
 export const getDataById = (id) => (dispatch) => {
   const URLBASE = `https://script.google.com/macros/s/AKfycbyM7HgadbGylSU4e6yH8DqOThfXFpFFL1jlbdd3y0rvIQwZvz5UkyelO6aX5G1WHCil/exec?id=${id}`
 
   return axios
     .get(URLBASE)
-    .then((res) =>  dispatch(setDataGlobal(Object.values(result.data.data))))
+    .then((result) => dispatch(setDataGlobal(Object.values(result.data.data))))
     .catch((err) => console.log(err))
 }

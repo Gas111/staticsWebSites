@@ -3,7 +3,7 @@ import axios from 'axios'
 
 export const loginsSlice = createSlice({
   name: 'login',
-  initialState: null,
+  initialState: false,
 
   reducers: {
     setLogin: (state, actions) => actions.payload,
@@ -13,14 +13,14 @@ export const { setLogin } = loginsSlice.actions
 
 export default loginsSlice.reducer
 
-export const getDataLogin = () => (dispatch) => {
+export const getDataLogin = (access_token) => (dispatch) => {
   const URLBASE = 'https://www.googleapis.com/oauth2/v3/userinfo'
-  let access_token = localStorage.getItem('accessToken')
 
   return axios
     .get(URLBASE, {
       headers: {
         Authorization: `Bearer ${access_token}`,
+        Accept: 'application/json',
       },
     })
     .then((res) => dispatch(setLogin(res.data)))

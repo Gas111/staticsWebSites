@@ -3,10 +3,10 @@ import NavBar from './NavBar'
 import Footer from './Footer'
 import MainSection from './MainSection'
 
-const MainScreen = ({ userInfo, setUserInfo }) => {
+const MainScreen = () => {
   return (
     <div>
-      <NavBar userInfo={userInfo} setUserInfo={setUserInfo} />
+      <NavBar />
       <MainSection />
       <Footer />
     </div>

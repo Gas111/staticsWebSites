@@ -10,13 +10,28 @@ import { getDataLogin } from '../store/slices/login.slice'
 
 const LoginScreen = () => {
   const navigate = useNavigate()
-  // const [userInfo, setUserInfo] = useState([])
+  //const [userInfo, setUserInfo] = useState([])
   // const [isDataOk, setIsDataOk] = useState(false)
   const dispatch = useDispatch()
   const loginData = useSelector((state) => state.login)
 
   useEffect(() => {
-    dispatch(getDataLogin())
+    const accessToken = localStorage.getItem('accessToken')
+
+    const getfunction = async (accessToken) => {
+      await dispatch(getDataLogin(accessToken))
+    }
+
+    getfunction()
+
+    if (loginData) {
+      console.log(loginData)
+      navigate('/search')
+    }
+    else{
+
+      
+    }
   }, [])
 
   return (

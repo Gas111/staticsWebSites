@@ -9,31 +9,16 @@ import InsertScreen from './components/InsertScreen'
 
 function App() {
   const [count, setCount] = useState(0)
-  const [userInfo, setUserInfo] = useState('')
+
   return (
     <div className="App">
       <Routes>
-        <Route
-          path="/"
-          element={
-            <LoginScreen userInfo={userInfo} setUserInfo={setUserInfo} />
-          }
-        ></Route>
+        <Route path="/" element={<MainScreen />}></Route>
 
-        <Route element={<ProtectedRoutes />}>
-          <Route
-            path="/search"
-            element={
-              <MainScreen userInfo={userInfo} setUserInfo={setUserInfo} />
-            }
-          ></Route>
-          <Route
-            path="/ingreso"
-            element={
-              <InsertScreen userInfo={userInfo} setUserInfo={setUserInfo} />
-            }
-          ></Route>
-        </Route>
+        {/* <Route element={<ProtectedRoutes />}> */}
+        <Route path="/search" element={<MainScreen />}></Route>
+        <Route path="/ingreso" element={<InsertScreen />}></Route>
+        {/* </Route> */}
       </Routes>
     </div>
   )

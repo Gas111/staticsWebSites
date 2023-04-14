@@ -1,32 +1,43 @@
-import React, { useEffect } from 'react'
-import { useGoogleLogin } from '@react-oauth/google'
+import React, { useEffect, useState } from 'react'
+
 import { useNavigate } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { getDataLogin } from '../store/slices/login.slice'
+
+import { useGoogleLogin } from '@react-oauth/google'
 
 const LoginSection = () => {
   const navigate = useNavigate()
   const userInfo = useSelector((state) => state.login)
+  const [isUserDataReady, setIsUserDataReady] = useState(false)
+  const dispatch = useDispatch()
 
-  useEffect(() => {}, [])
-
-  const loginToGoogle = () => {
-    // if (userInfo) {
-    //   // navigate('/search')
-    //   console.log('toy aca')
-    // } else {
-    //   console.log('toy aca else')
-    useGoogleLogin({
-      onSuccess: (tokenResponse) => {
-        localStorage.setItem('loginWith', 'Google')
-        localStorage.setItem('accessToken', tokenResponse.access_token)
-        console.log('login Ok')
-      },
-      onError: () => {
-        console.log('login failed')
-      },
-    })
+  useEffect(() => {
+    // if (isUserDataReady) {
+    //   const access_token = localStorage.getItem('accessToken')
+    //   if (access_token) dispatch(getDataLogin(access_token))
     // }
-  }
+  }, [])
+
+  const loginToGoogle = useGoogleLogin({
+    onSuccess: (tokenResponse) => {
+      localStorage.setItem('loginWith', 'Google')
+      localStorage.setItem('accessToken', tokenResponse.access_token)
+      console.log('login Ok')
+      setIsUserDataReady(true)
+      dispatch(getDataLogin(tokenResponse.access_token))
+      console.log(userInfo)
+      navigate('/search')
+    },
+    onError: () => {
+      console.log('login failed')
+    },
+  })
+
+
+
+
+  
 
   return (
     <div className="text-left flex justify-center ai-center pl-[1rem]  pr-[1rem] pt-[1rem] bg-gradient-to-r from-slate-100 to-purple-400 w-full h-screen">
@@ -78,7 +89,11 @@ const LoginSection = () => {
             </a>
           </div>
           <div className="m-[0.5rem] border-b-2 ">
-            <button onClick={() => loginToGoogle()}>CLICK ACA</button>
+            {isUserDataReady ? (
+              <p>{userInfo}</p>
+            ) : (
+              <button onClick={() => loginToGoogle()}>CLICK ACA</button>
+            )}
           </div>
         </form>
       </div>

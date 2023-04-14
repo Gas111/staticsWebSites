@@ -3,9 +3,10 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import GoogleLogoutButton from './GoogleButtons/GoogleLogoutButton'
-import { googleLogout } from '@react-oauth/google'
+
 import { useNavigate } from 'react-router'
 import { useSelector } from 'react-redux'
+import { googleLogout } from '@react-oauth/google'
 
 const navigation = [
   { name: 'Busqueda', href: '/search', current: false },
@@ -24,9 +25,10 @@ export default function NavBar() {
 
   useEffect(() => {}, [])
 
-  const handlerSignOut = async () => {
+  const handlerSignOut = () => {
     googleLogout()
     localStorage.removeItem('accessToken')
+    localStorage.removeItem('token')
     localStorage.removeItem('loginWith')
     navigate('/')
   }
@@ -102,7 +104,7 @@ export default function NavBar() {
                             ? 'h-8 w-8 rounded-full'
                             : 'h-8 w-8 rounded-full display-none invisible'
                         }
-                        src={userInfo?.picture}
+                        src={userInfo ? userInfo.picture : ''}
                         alt="Image User"
                       />
                     </Menu.Button>
