@@ -10,8 +10,8 @@ import { googleLogout } from '@react-oauth/google'
 
 const navigation = [
   { name: 'Busqueda', href: '/search', current: false },
-  { name: 'Nuevo Ingreso', href: '/ingreso', current: false },
-  { name: 'Cambios', href: '/cambio', current: false },
+  { name: 'Nuevo Ingreso', href: '/insert', current: false },
+  { name: 'Egreso/Ingreo', href: '/update', current: false },
   { name: 'Link Sheet', href: '/linksheet', current: false },
 ]
 
@@ -31,6 +31,11 @@ export default function NavBar() {
     localStorage.removeItem('token')
     localStorage.removeItem('loginWith')
     navigate('/')
+  }
+
+  const handlerNavigate = (ref) => {
+    console.log(ref)
+    navigate(ref)
   }
 
   return (
@@ -69,7 +74,7 @@ export default function NavBar() {
                     {navigation.map((item) => (
                       <a
                         key={item.name}
-                        href={item.href}
+                        // href={item.href}
                         className={classNames(
                           item.current
                             ? 'bg-gray-900 text-white'
@@ -77,6 +82,7 @@ export default function NavBar() {
                           'rounded-md px-3 py-2 text-sm font-medium',
                         )}
                         aria-current={item.current ? 'page' : undefined}
+                        onClick={() => handlerNavigate(item.href)}
                       >
                         {item.name}
                       </a>

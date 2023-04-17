@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import InputFormSearch from './InputFormSearch'
 import { useForm } from 'react-hook-form'
 
-const InserForm = () => {
+const InsertForm = () => {
   const [columns, setColumns] = useState([])
   const [allData, setAllData] = useState([])
   const [loading, setLoading] = useState(false)
@@ -83,4 +83,4 @@ const InserForm = () => {
   )
 }
 
-export default InserForm
+export default InsertForm

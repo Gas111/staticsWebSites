@@ -10,7 +10,7 @@ const Footer = () => {
             <a href="#main_section">Inicio</a>
           </li>
           <li>
-            <a href="#first_section">Información</a>{' '}
+            <a href="#first_section">Información</a>
           </li>
           <li>
             <a href="#second_section">Ubicación</a>

@@ -1,13 +1,13 @@
 import React from 'react'
 import NavBar from './NavBar'
-import MainSection from './MainSection'
+import InsertSection from './InsertSection'
 import Footer from './Footer'
 
-const InsertScreen = ({ userInfo, setUserInfo }) => {
+const InsertScreen = () => {
   return (
     <div>
-      <NavBar userInfo={userInfo} setUserInfo={setUserInfo} />
-      <MainSection />
+      <NavBar />
+      <InsertSection />
       <Footer />
     </div>
   )
