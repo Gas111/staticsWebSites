@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
-import place from '../images/ubicacionDunken.jpg'
+import place from '../images/larural.png'
 import libro from '../images/libro.png'
 import './styles/secondSection.css'
 
@@ -9,13 +9,13 @@ const SecondSection = () => {
   return (
     <section className="secondSection w-full h-auto" id="second_section">
       <Card style={{ width: '20rem', height: '25rem',boxShadow:"0px 1px 5px 3px rgba(0,0,0,0.25)" }}>
-        <a href="https://goo.gl/maps/GqfBC">
+        <a href="https://www.google.com/maps/dir//-34.580533,-58.4217103/@-34.580513,-58.4917504,12z/data=!3m1!4b1">
           <Card.Img variant="top" src={place} />
         </a>
         <Card.Body>
           <Card.Title>UBICACION</Card.Title>
           <Card.Text>
-            EDITORIAL DUNKEN - Calle Ayacucho 357, esquina Av.Corrientes, CABA.
+          Sala Horacio Gonzales - Pabellon Ocre, la Rural. Duracion: 1 hora
             Argentina
           </Card.Text>
         </Card.Body>

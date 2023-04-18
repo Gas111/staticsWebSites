@@ -33,11 +33,11 @@ const Footer = () => {
           <i className="fa-brands fa-instagram"></i>
         </a>
         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ianz.spanish.book@gmail.com">
-          {' '}
           <i className="fa fa-envelope"></i>
         </a>
       </div>
     </footer>
+    
   )
 }
 
