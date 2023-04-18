@@ -14,9 +14,8 @@ const SecondSection = () => {
         </a>
         <Card.Body>
           <Card.Title>UBICACION</Card.Title>
-          <Card.Text>
-          Sala Horacio Gonzales - Pabellon Ocre, la Rural. Duracion: 1 hora
-            Argentina
+          <Card.Text style={{ fontSize: '0.9rem' }}>
+         FERIA INTERNACIONAL DEL LIBRO DE BUENOS AIRES-LA RURAL(CABA)-Argentina-Sala Horacio Gonzales-Pabellon Ocre-/Ingresos: Av. Santa Fe 4201/Av. Sarmiento 2704, y estacionamiento/Av. Cerviño 4474, y estacionamiento
           </Card.Text>
         </Card.Body>
       </Card>
