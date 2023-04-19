@@ -5,11 +5,11 @@ import './styles/thirdSection.css'
 
 const ThirSection = () => {
   const handleFormVirtual = () => {
-    window.open('https://forms.gle/PzpLMr6hWqDDHBu8A')
+    window.open('https://forms.gle/m5eGx9rqmfb8Dg377')
   }
 
   const handleFormPresencial = () => {
-    window.open('https://forms.gle/oNR7CqUdikApyBt66')
+    window.open('https://forms.gle/RYWvdpANHTNBrKkN6')
   }
 
   return (
