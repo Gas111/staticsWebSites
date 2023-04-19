@@ -1,0 +1,22 @@
+.thirdSection {
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+    margin: 2rem 0;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.button-styles{
+background-color: var(--bg-header);
+color:white;
+font-weight: 600;
+border-radius: 5px;
+padding: 0.5rem 1rem;
+}
+
+
+.button-styles:hover{
+    background-color:#505962;
+
+}

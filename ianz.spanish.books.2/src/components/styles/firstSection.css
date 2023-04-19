@@ -1,0 +1,14 @@
+.firstsection {
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+    margin: 2rem 0;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.text-bold{
+    font-weight: 600;
+    font-size: 1.02rem;
+
+}
