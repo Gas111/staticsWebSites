@@ -2,7 +2,7 @@ import React from 'react'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import imageCardOne from '../images/librocostado.png'
-import imageCardTwo from '../images/diayhorario0205.webp'
+import imageCardTwo from '../images/diayhorario0705.webp'
 import './styles/firstSection.css'
 import 'add-to-calendar-button'
 const FirstSection = () => {
@@ -40,17 +40,17 @@ const FirstSection = () => {
           <Card.Title>Días y Horarios</Card.Title>
           <Card.Text>
             El evento será llevado a cabo en forma{' '}
-            <span className="text-bold">presencial y virtual</span> el día 2 de
-            MAYO del 2023 de 19 a 20hs hora Argentina, Bs As.
+            <span className="text-bold">presencial y virtual</span> el día 7 de
+            MAYO del 2023 de 16 a 17hs hora Argentina, Bs As.
           </Card.Text>
           <add-to-calendar-button
             name="Evento FilantroInversion Inmobiliaria"
             options="'Apple','Google','iCal','Outlook.com','Microsoft 365','Microsoft Teams','Yahoo'"
             location="World Wide Web"
-            startDate="2023-05-02"
-            endDate="2023-05-02"
-            startTime="19:00"
-            endTime="20:00"
+            startDate="2023-05-07"
+            endDate="2023-05-07"
+            startTime="16:00"
+            endTime="17:00"
             timeZone="America/Buenos_Aires"
           ></add-to-calendar-button>
         </Card.Body>
